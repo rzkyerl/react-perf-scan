@@ -1,0 +1,42 @@
+name: Publish to npm
+
+# Workflow ini akan berjalan HANYA saat Anda membuat "Release" baru di GitHub
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    # Permissions id-token: write diperlukan untuk fitur "npm provenance"
+    # Fitur ini memberi badge centang hijau di npm bahwa package benar-benar dibuild dari GitHub
+    permissions:
+      contents: read
+      id-token: write 
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Publish to npm
+        # Pindah ke folder package dan publish
+        run: |
+          cd packages/react-perf-scan
+          npm publish --provenance --access public
+        env:
+          # Mengambil rahasia NPM_TOKEN yang Anda simpan di GitHub Secrets
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
