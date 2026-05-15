@@ -29,17 +29,15 @@ so it ships 0 bytes of overhead to your users.
 
 ## Installation
 
-> **Note:** `react-perf-scan` is not yet published to npm. Install directly from GitHub:
-
 ```bash
 # npm
-npm install github:rzkyerl/react-perf-scan#main --save-dev
+npm install react-perf-scan --save-dev
 
 # pnpm
-pnpm add github:rzkyerl/react-perf-scan#main -D
+pnpm add react-perf-scan -D
 
 # yarn
-yarn add github:rzkyerl/react-perf-scan#main --dev
+yarn add react-perf-scan --dev
 ```
 
 Or clone and build locally (see [Contributing](#contributing)).
