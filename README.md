@@ -2,7 +2,7 @@
 
 > **Dev-only** wasted-render visualizer and memoization advisor for React 18 & 19.
 
-[![CI](https://github.com/your-username/react-perf-monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/react-perf-monitor/actions/workflows/ci.yml)
+[![CI](https://github.com/rzkyerl/react-perf-scan/actions/workflows/ci.yml/badge.svg)](https://github.com/rzkyerl/react-perf-scan/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-18%20%7C%2019-61DAFB?logo=react)](https://react.dev)
 
@@ -33,13 +33,13 @@ so it ships 0 bytes of overhead to your users.
 
 ```bash
 # npm
-npm install github:rzkyerl/react-perf-monitor#main --save-dev
+npm install github:rzkyerl/react-perf-scan#main --save-dev
 
 # pnpm
-pnpm add github:rzkyerl/react-perf-monitor#main -D
+pnpm add github:rzkyerl/react-perf-scan#main -D
 
 # yarn
-yarn add github:rzkyerl/react-perf-monitor#main --dev
+yarn add github:rzkyerl/react-perf-scan#main --dev
 ```
 
 Or clone and build locally (see [Contributing](#contributing)).
@@ -238,8 +238,8 @@ automatically used to select the correct condition. No extra configuration neede
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/react-perf-monitor.git
-cd react-perf-monitor
+git clone https://github.com/rzkyerl/react-perf-scan.git
+cd react-perf-scan
 
 # 2. Install dependencies (requires pnpm >= 9 and Node >= 18)
 pnpm install
@@ -260,7 +260,7 @@ pnpm typecheck
 ### Repository Structure
 
 ```
-react-perf-monitor/
+react-perf-scan/
 ├── packages/
 │   └── react-perf-scan/     ← library source
 │       ├── src/
@@ -277,4 +277,4 @@ react-perf-monitor/
 
 ## License
 
-[MIT](LICENSE) — © 2026 your-username
+[MIT](LICENSE) — © 2026 rzkyerl
