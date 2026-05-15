@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rzkyerl/react-perf-scan.git",
+    "url": "git+https://github.com/rzkyerl/react-perf-scan.git",
     "directory": "packages/react-perf-scan"
   },
   "homepage": "https://github.com/rzkyerl/react-perf-scan#readme",
@@ -78,4 +78,3 @@
     "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
   }
 }
-
