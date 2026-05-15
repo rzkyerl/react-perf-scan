@@ -1,0 +1,18 @@
+{
+  "name": "react-perf-monitor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Monorepo for react-perf-scan",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm --filter react-perf-scan build",
+    "dev": "pnpm --filter playground dev",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter react-perf-scan test"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=18"
+  }
+}

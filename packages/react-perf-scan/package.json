@@ -1,0 +1,49 @@
+{
+  "name": "react-perf-scan",
+  "version": "0.1.0",
+  "description": "React dev-only wasted render visualizer and memo suggestions",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.dev.cjs",
+  "module": "./dist/index.dev.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": {
+        "import": "./dist/index.dev.mjs",
+        "require": "./dist/index.dev.cjs"
+      },
+      "production": {
+        "import": "./dist/index.prod.mjs",
+        "require": "./dist/index.prod.cjs"
+      },
+      "import": "./dist/index.prod.mjs",
+      "require": "./dist/index.prod.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "size:report": "node ./scripts/report-bundle-size.mjs"
+  }
+}

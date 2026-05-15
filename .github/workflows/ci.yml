@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  react-perf-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Typecheck
+        run: pnpm --filter react-perf-scan typecheck
+
+      - name: Unit tests
+        run: pnpm --filter react-perf-scan test
+
+      - name: Build library
+        run: pnpm --filter react-perf-scan build
+
+      - name: Bundle size report (gzip)
+        run: pnpm --filter react-perf-scan size:report
