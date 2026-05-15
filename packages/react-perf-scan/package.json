@@ -1,6 +1,6 @@
 {
   "name": "react-perf-scan",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dev-only wasted-render visualizer and memoization advisor for React 18 & 19",
   "author": "rzkyerl",
   "license": "MIT",
@@ -75,6 +75,6 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "size:report": "node ./scripts/report-bundle-size.mjs",
-    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build && node -e \"const fs=require('fs'); ['README.md','CHANGELOG.md','LICENSE'].forEach(f=>fs.copyFileSync('../../'+f,f))\""
   }
 }
