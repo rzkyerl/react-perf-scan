@@ -37,6 +37,3 @@ jobs:
         run: |
           cd packages/react-perf-scan
           npm publish --provenance --access public
-        env:
-          # Mengambil rahasia NPM_TOKEN yang Anda simpan di GitHub Secrets
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
